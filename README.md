@@ -1,40 +1,71 @@
 # 重邮校园网 Android 客户端 (CQUPT Net App)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub Repository](https://img.shields.io/badge/GitHub-cqupt--net--app-blue?logo=github)](https://github.com/MeTerminator/cqupt-net-app)
+<p align="center">
+  <img src="https://img.shields.io/badge/Platform-Android-green?logo=android&logoColor=white" alt="Platform">
+  <img src="https://img.shields.io/badge/Language-Kotlin-orange?logo=kotlin&logoColor=white" alt="Language">
+  <img src="https://img.shields.io/badge/Framework-Jetpack%20Compose-blue?logo=jetpack-compose&logoColor=white" alt="Framework">
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License"></a>
+</p>
 
-一个使用 Kotlin 和 Jetpack Compose 编写的重邮（CQUPT）校园网认证客户端。
+一个使用 **Kotlin** 和 **Jetpack Compose** 编写的现代化重邮（CQUPT）校园网认证客户端。旨在为重邮学子提供更加流畅、美观且便捷的网络认证体验。
 
-## ✨ 特性
+---
 
-- **现代化 UI**：采用 Jetpack Compose 构建，支持深色模式与玻璃拟态设计。
-- **一键认证**：内置 Dr.COM 协议，支持一键登录、登出和状态刷新。
-- **智能检测**：自动获取 IPv4 地址，实时显示当前连接状态。
-- **快速配置**：简洁的账号配置界面，支持保存账号、密码及运营商选择。
+## ✨ 核心特性
 
-## 🛠️ 编译与运行
+- 🎨 **现代化 UI 设计**：全量采用 Jetpack Compose 构建，支持深色模式与灵动的玻璃拟态（Glassmorphism）视觉风格。
+- ⚡ **极速认证**：深度集成 Dr.COM 协议，实现一键登录、快速注销及实时状态同步。
+- 🔍 **智能网络诊断**：自动监测网络环境，精准获取 IPv4 地址，实时反馈连接链路状态。
+- 🔒 **便捷配置管理**：极简的账号设置界面，加密存储用户凭据，支持主流运营商一键切换。
+
+## 🛠️ 技术栈
+
+- **UI 框架**: Jetpack Compose (Material 3)
+- **开发语言**: Kotlin
+- **网络逻辑**: 基于协程的异步网络请求
+- **数据持久化**: SharedPreferences (加密存储建议)
+
+## 🚀 编译与运行
 
 ### 环境要求
-- Android SDK 35+
-- Gradle 8.9+
-- JDK 17+
 
-### 编译 APK
-在项目根目录下执行：
-```bash
-./gradlew :app:assembleDebug
-```
+| 工具 | 最低版本 |
+| :--- | :--- |
+| Android SDK | 35+ |
+| Gradle | 8.9+ |
+| JDK | 17+ |
 
-### 安装到设备
-```bash
-adb install app/build/outputs/apk/debug/app-debug.apk
-```
+### 快速开始
+
+1. **克隆项目**
+   ```bash
+   git clone https://github.com/MeTerminator/cqupt-net-app.git
+   ```
+
+2. **编译 APK**
+   ```bash
+   ./gradlew :app:assembleDebug
+   ```
+
+3. **安装到设备**
+   ```bash
+   adb install app/build/outputs/apk/debug/app-debug.apk
+   ```
 
 ## 📂 项目结构
 
-- `app/src/main/java/top/met6/cquptnet/MainActivity.kt`: UI 交互与 Compose 组件。
-- `app/src/main/java/top/met6/cquptnet/SDK.kt`: 校园网认证核心逻辑。
-- `app/src/main/java/top/met6/cquptnet/SettingsManager.kt`: 用户凭据持久化。
+```text
+app/src/main/java/top/met6/cquptnet/
+├── MainActivity.kt      # UI 核心入口与 Compose 视图组件
+├── SDK.kt               # 校园网认证协议核心逻辑 (Dr.COM)
+└── SettingsManager.kt   # 用户偏好设置与凭据持久化管理
+```
+
+## 🙏 致谢
+
+本项目在开发过程中参考了以下优秀开源项目：
+
+- [CQUPT-Net-SDK](https://github.com/Auto-CQUPT-Plan/CQUPT-Net-SDK) - 提供了核心的重邮校园网认证逻辑参考。
 
 ## 📄 开源协议
 
